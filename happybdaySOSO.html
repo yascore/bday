@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday soso ❤️ </title>
+<link rel="stylesheet" type="text/css" href="stylesoso.css">
+</head>
+<body style="background-color: rgb(157, 149, 210);">
+  <section>
+ <h2>T'ES LA BIRTHDAY GIRL OU BIENNN ? ❤️</h2>
+</section>
+<section> 
+   <button class="btn" onclick="audio.play();">Oui</button>
+   <script type="text/javascript">
+    const audio = new Audio();
+        audio.src="new-year-fireworks-sound4-180205.mp3";
+   </script>
+  <button id="noButton">Non</button>
+
+  <script>
+    document.getElementsByClassName("btn")[0].addEventListener("click",()=> {confetti();})
+    document.getElementsByClassName("btn")[0].addEventListener("click",()=> {audio.play();})
+
+    // Add event listener to make the "No" button run away when the mouse approaches
+    document.getElementById('noButton').addEventListener('mouseover', runAway);
+
+    function runAway() {
+      // Make the "No" button move away from the mouse
+      document.getElementById('noButton').style.left = Math.random() * window.innerWidth + 'px';
+      document.getElementById('noButton').style.top = Math.random() * window.innerHeight + 'px';
+    }
+  </script>
+  
+  <div class="popup">
+    <h3>Joyeux Anniversaire Soso ! 🎉🫶🏼
+      Qu'Allah t'accorde une belle et longue vie pleine de bonheur ma princesse.T'ES TROP LA PLUS COOL🙈🎀💓
+    </h3>
+   </div> 
+</section>
+
+
+<canvas id="my-canvas"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+    let btn = document.querySelector('.btn');
+    let popup = document.querySelector('.popup');
+    let confe = document.querySelector('#my canvas');
+    btn.onclick = function(){  
+        popup.classList.add('active');
+        confe.classList.add('active');
+
+
+    }
+
+    var confettiSettings = { target: 'my-canvas' };
+    var confetti = new ConfettiGenerator
+    (confettiSettings);
+confetti.render();
+</script>
+</body>
+</html>
